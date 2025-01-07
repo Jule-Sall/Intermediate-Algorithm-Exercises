@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Permutation Generator</title>
+    <link rel="stylesheet" href="styles/general.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Find the three sum</h1>
+        <input type="text" id="input-array" placeholder="Enter an array of numbers">
+        <input type="number" id="input-target" placeholder="Enter the target">
+    
+        <button id="find-three-sum">Find The Three Sum</button>
+        <div id="three-sum-display"></div>
+    </div>
+    <script src="scripts/11-three-sum-problem.js"></script>
+    <script>
+            
+    document.getElementById('find-three-sum').addEventListener('click', function() {
+       
+        const inputArray = document.getElementById('input-array').value.split(",").map(Number);
+        const inputTarget = Number(document.getElementById('input-target').value);
+        if (inputArray && inputTarget) {
+            document.getElementById('three-sum-display')
+                .innerHTML = `${findThreeSum(inputArray, inputTarget)}`;
+        }
+    });
+    </script>
+</body>
+</html>

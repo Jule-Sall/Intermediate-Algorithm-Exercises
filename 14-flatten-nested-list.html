@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flatten Nested List</title>
+    <link rel="stylesheet" href="styles/general.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Flatten Nested List</h1>
+        <textarea id="nested-list-input" placeholder="Enter a nested list (e.g., [1, [2, [3, 4], 5], 6])"></textarea>
+        <button id="flatten-button">Flatten List</button>
+        <div id="flattened-list-display"></div>
+    </div>
+    <script src="scripts/14-flatten-nested-list.js"></script>
+    <script>
+        
+
+        document.getElementById('flatten-button').addEventListener('click', function() {
+            const input = document.getElementById('nested-list-input').value;
+            try {
+                const nestedList = JSON.parse(input);
+                const flattenedList = flattenList(nestedList);
+                document.getElementById('flattened-list-display').innerText = `Flattened List: ${flattenedList.join(', ')}`;
+            } catch (e) {
+                document.getElementById('flattened-list-display').innerText = 'Invalid input. Please enter a valid nested list.';
+            }
+        });
+    </script>
+</body>
+</html>

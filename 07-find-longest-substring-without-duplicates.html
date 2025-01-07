@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Longest Substring Without Duplicates</title>
+    <link rel="stylesheet" href="styles/general.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Find Longest Substring Without Duplicates</h1>
+        <input type="text" id="input-string" placeholder="Enter a string">
+        <button id="find-button">Find Longest Substring</button>
+        <div id="result-display"></div>
+    </div>
+    <script src="scripts/07-find-longest-substring-without-duplicates.js"></script>
+    <script>
+        document.getElementById('find-button').addEventListener('click', function() {
+            const inputString = document.getElementById('input-string').value.toLowerCase();
+            const substrings = generateSubstrings(inputString);
+            const longestSubstring = substrings.reduce((max, current) => current.length > max.length ? current : max, {text: [''], length: 0});
+            document.getElementById('result-display').innerText = `Longest Substring: ${longestSubstring.text.join('')}`;
+        });
+    </script>
+</body>
+</html>

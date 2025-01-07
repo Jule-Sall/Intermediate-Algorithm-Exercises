@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Permutation Generator</title>
+    <link rel="stylesheet" href="styles/general.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Permutation Generator</h1>
+        <input type="text" id="input-string" placeholder="Enter a string">
+        <button id="generate-button">Generate Permutations</button>
+        <div id="permutations-display"></div>
+    </div>
+    <script src="scripts/01-generate-permutations.js"></script>
+    <script>
+            
+    document.getElementById('generate-button').addEventListener('click', function() {
+        const inputString = document.getElementById('input-string').value;
+        if (inputString) {
+            getPermutations(inputString);
+        }
+    });
+    </script>
+</body>
+</html>

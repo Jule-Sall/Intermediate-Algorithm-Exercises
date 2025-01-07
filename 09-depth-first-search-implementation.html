@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Depth-First Search Visualization</title>
+    <link rel="stylesheet" href="styles/general.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Depth-First Search Visualization</h1>
+        <div id="tree-structure">
+            <ul>
+                <li>
+                    <span class="node">A</span>
+                    <ul>
+                        <li>
+                            <span class="node">B</span>
+                            <ul>
+                                <li>
+                                    <span class="node">D</span>
+                                    <ul>
+                                        <li><span class="node">I</span></li>
+                                        <li><span class="node">J</span></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <span class="node">E</span>
+                                    <ul>
+                                        <li><span class="node">K</span></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span class="node">C</span>
+                            <ul>
+                                <li>
+                                    <span class="node">G</span>
+                                    <ul>
+                                        <li><span class="node">L</span></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <span class="node">H</span>
+                                    <ul>
+                                        <li><span class="node">M</span></li>
+                                        <li><span class="node">N</span></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <button id="dfs-button">Run DFS</button>
+        <div id="dfs-result"></div>
+    </div>
+    <script src="scripts/09-depth-first-search-implementation.js"></script>
+    <script>
+        document.getElementById('dfs-button').addEventListener('click', function() {
+            const result = [];
+            function depthFirstSearch(node) {
+                if (!node) return;
+                result.push(node.value);
+                if (node.children) {
+                    node.children.forEach(child => {
+                        depthFirstSearch(child);
+                    });
+                }
+            }
+            depthFirstSearch(root);
+            document.getElementById('dfs-result').innerText = `DFS Traversal: ${result.join(' -> ')}`;
+        });
+    </script>
+</body>
+</html>

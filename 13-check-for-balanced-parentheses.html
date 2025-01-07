@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Permutation Generator</title>
+    <link rel="stylesheet" href="styles/general.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Balanced Parentheses Checker</h1>
+        <input type="text" id="input-string" placeholder="Enter a string">
+        <button id="check-parentheses-button">Check Parentheses</button>
+        <div id="check-parentheses-display"></div>
+    </div>
+    <script src="scripts/13-check-for-balanced-parentheses.js"></script>
+    <script>
+            
+    document.getElementById('check-parentheses-button').addEventListener('click', function() {
+        const inputString = document.getElementById('input-string').value;
+        if (inputString) {
+            if(checkParentheses(inputString) === true){
+                document.getElementById('check-parentheses-display')
+                    .innerHTML = `${inputString} has balanced parentheses`;
+            }
+            else{
+                document.getElementById('check-parentheses-display')
+                .innerHTML = `parentheses are not balanced`;  
+            }
+        }
+    });
+    </script>
+</body>
+</html>

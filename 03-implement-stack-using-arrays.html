@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stack Implementation</title>
+    <link rel="stylesheet" href="styles/general.css">
+    
+</head>
+<body>
+    <div class="container">
+        <h1>Stack Implementation</h1>
+        <input type="number" id="stack-input" placeholder="Enter a number">
+        <br>
+        <button id="push-button">Push</button>
+        <button id="pop-button">Pop</button>
+        <button id="peek-button">Peek</button>
+        <div id="stack-display"></div>
+    </div>
+    <script src="scripts/03-implement-stack-using-arrays.js"></script>
+    <script>
+        const stack = new Stack();
+        const stackDisplay = document.getElementById('stack-display');
+        const stackInput = document.getElementById('stack-input');
+        const pushButton = document.getElementById('push-button');
+        const popButton = document.getElementById('pop-button');
+        const peekButton = document.getElementById('peek-button');
+
+        pushButton.addEventListener('click', () => {
+            const value = stackInput.value;
+            stack.push(value);
+            stackDisplay.style.fontWeight = 'bold';
+            stackDisplay.innerHTML = stack.display();
+        });
+
+        popButton.addEventListener('click', () => {
+            stack.pop();
+            stackDisplay.style.fontWeight = 'bold';
+            stackDisplay.innerHTML = stack.display();
+        });
+
+        peekButton.addEventListener('click', () => {
+            stackDisplay.innerHTML = stack.peek();
+        });
+    </script>
+</body>
+</html>

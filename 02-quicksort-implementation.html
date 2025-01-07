@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quicksort Implementation</title>
+    <link rel="stylesheet" href="styles/general.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Quicksort Implementation</h1>
+        <input type="text" id="input-array" placeholder="Enter numbers separated by commas">
+        <button id="sort-button">Sort Array</button>
+        <div id="sorted-array-display"></div>
+    </div>
+    <script src="scripts/02-quicksort-implementation.js"></script>
+    <script>
+        document.getElementById('sort-button').addEventListener('click', function() {
+            const inputArray = document.getElementById('input-array').value.split(',').map(Number);
+            if (inputArray.length) {
+                const sortedArray = sort(inputArray);
+                document.getElementById('sorted-array-display').style.fontWeight = "bold";
+                document.getElementById('sorted-array-display').innerText = sortedArray.join(', ');
+            }
+        });
+    </script>
+</body>
+</html>

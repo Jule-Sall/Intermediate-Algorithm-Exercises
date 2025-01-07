@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Prime Numbers</title>
+    <link rel="stylesheet" href="styles/general.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Find Prime Numbers</h1>
+        <input type="number" id="input-number" placeholder="Enter a number">
+        <button id="find-primes-button">Find Primes</button>
+        <div id="primes-display"></div>
+    </div>
+    <script src="scripts/08-find-prime-numbers.js"></script>
+    <script>
+        document.getElementById('find-primes-button').addEventListener('click', function() {
+            const n = parseInt(document.getElementById('input-number').value);
+            if (!isNaN(n) && n > 1) {
+                const numbers = generateNumbers(n);
+                const primeNumbers = findPrimeNumbers(numbers, 2);
+                document.getElementById('primes-display').innerText = `Prime Numbers: ${primeNumbers.join(', ')}`;
+            } else {
+                document.getElementById('primes-display').innerText = 'Please enter a valid number greater than 1.';
+            }
+        });
+    </script>
+</body>
+</html>

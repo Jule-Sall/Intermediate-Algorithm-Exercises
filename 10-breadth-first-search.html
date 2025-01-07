@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breadth-First Search Visualization</title>
+    <link rel="stylesheet" href="styles/general.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Breadth-First Search Visualization</h1>
+        <div id="tree-structure">
+            <ul>
+                <li>
+                    <span class="node">A</span>
+                    <ul>
+                        <li>
+                            <span class="node">B</span>
+                            <ul>
+                                <li>
+                                    <span class="node">D</span>
+                                    <ul>
+                                        <li><span class="node">I</span></li>
+                                        <li><span class="node">J</span></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <span class="node">E</span>
+                                    <ul>
+                                        <li><span class="node">K</span></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span class="node">C</span>
+                            <ul>
+                                <li>
+                                    <span class="node">G</span>
+                                    <ul>
+                                        <li><span class="node">L</span></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <span class="node">H</span>
+                                    <ul>
+                                        <li><span class="node">M</span></li>
+                                        <li><span class="node">N</span></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <button id="bfs-button">Run BFS</button>
+        <div id="bfs-result"></div>
+    </div>
+    <script src="scripts/10-breadth-first-search.js"></script>
+    <script>
+        document.getElementById('bfs-button').addEventListener('click', function() {
+            const result = [];
+            function breadthFirstSearch(node) {
+                if (!node) return;
+
+                const queue = [node];
+
+                while (queue.length > 0) {
+                    const currentNode = queue.shift();
+                    result.push(currentNode.value);
+
+                    if (currentNode.children) {
+                        queue.push(...currentNode.children);
+                    }
+                }
+            }
+            breadthFirstSearch(root);
+            document.getElementById('bfs-result').innerText = `BFS Traversal: ${result.join(' -> ')}`;
+        });
+    </script>
+</body>
+</html>

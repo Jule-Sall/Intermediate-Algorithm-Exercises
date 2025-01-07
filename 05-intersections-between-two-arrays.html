@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Intersections</title>
+    <link rel="stylesheet" href="styles/general.css">
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            row-gap: 1rem;
+        }
+       
+      
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Find Intersections Between Two Arrays</h1>
+        <input type="text" id="array1-input" placeholder="Enter first array (comma separated)">
+        <input type="text" id="array2-input" placeholder="Enter second array (comma separated)">
+        <button id="find-intersections-button">Find Intersections</button>
+        <div id="intersections-display"></div>
+    </div>
+    <script src="scripts/05-intersections-between-two-arrays.js"></script>
+    <script>
+        document.getElementById('find-intersections-button').addEventListener('click', function() {
+            const array1 = document.getElementById('array1-input').value.split(',').map(Number);
+            const array2 = document.getElementById('array2-input').value.split(',').map(Number);
+            if (array1.length && array2.length) {
+                const intersections = findIntersections(array1, array2);
+                document.getElementById('intersections-display').innerText = intersections.join(', ');
+            }
+        });
+    </script>
+</body>
+</html>

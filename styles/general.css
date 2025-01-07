@@ -1,0 +1,111 @@
+body {
+    background-color: #f0f0f0;
+    color: #333333;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #333333;
+}
+
+input[type="text"], 
+input[type="number"] {
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    width: 80%;
+    max-width: 300px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: #ffffff;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#permutations-display {
+    margin-top: 20px;
+    white-space: pre-wrap;
+    color: #333333;
+}
+
+#tree-structure {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+ul {
+    padding-top: 20px;
+    position: relative;
+    transition: all 0.5s;
+}
+
+ul ul {
+    margin-left: 20px;
+}
+
+.node {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.node:hover {
+    background-color: #0056b3;
+}
+
+ul ul::before {
+    content: '';
+    border-left: 1px solid #ccc;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 100%;
+}
+
+ul ul li {
+    position: relative;
+    padding-left: 20px;
+}
+
+ul ul li::before {
+    content: '';
+    border-top: 1px solid #ccc;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 10px;
+}
+
+
+#dfs-result {
+    margin-top: 20px;
+    white-space: pre-wrap;
+    color: #333333;
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Permutation Generator</title>
+    <link rel="stylesheet" href="styles/general.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Find the median</h1>
+        <input type="text" id="input-array1" placeholder="Enter an array of numbers">
+        <input type="text" id="input-array2" placeholder="Enter an array of numbers">
+      
+    
+        <button id="find-the-median">Find The Median</button>
+        <div id="median-display"></div>
+    </div>
+    <script src="scripts/12-find-median-of-two-sorted-arrays.js"></script>
+    <script>
+            
+    document.getElementById('find-the-median').addEventListener('click', function() {
+        const nums1 = document.getElementById('input-array1').value.split(",").map(Number);
+        const nums2 = document.getElementById('input-array2').value.split(",").map(Number);
+        if(nums1 && nums2){
+            document.getElementById('median-display')
+                .innerHTML = `${findTheMedian(nums1, nums2)}`;
+        }
+    });
+    </script>
+</body>
+</html>
