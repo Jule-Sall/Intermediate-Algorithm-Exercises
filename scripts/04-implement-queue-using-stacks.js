@@ -1,3 +1,4 @@
+/*
 // this class simulates the behavior of a stack using an array
 // by following the LIFO (Last In First Out) principle
 
@@ -94,4 +95,5 @@ queue.enqueue(4);
 queue.display();
 
 
-
+*/
+// work in progress
